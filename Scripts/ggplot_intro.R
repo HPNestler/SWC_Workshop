@@ -20,3 +20,15 @@ ggplot(data = gapminder, mapping = aes(x=continent, y=lifeExp, fill=continent)) 
 #  geom_point() # add for additional layers
 
 ggsave(filename = "Analysis/LifeExpCont.png")
+ggsave(filename = paste0("Analysis/LifeExpCont_",Sys.Date(),".png"))
+
+# Second PLot
+ggplot(data = gapminder, mapping = aes(x=log(gdpPercap), y=lifeExp, fill=continent,color=year, alpha=.5)) +
+  geom_point() +
+  geom_smooth(method='lm', formula=y~x)
+
+ggsave(filename = paste0("Analysis/LifeExp_GDP_Cont_",Sys.Date(),".png"))
+
+ggplot(data = gapminder, mapping = aes(x=year, y=lifeExp, fill=continent,color=continent, alpha=.5)) +
+  geom_point() +
+  geom_smooth(method='lm', formula=y~x)
