@@ -32,3 +32,5 @@ ggsave(filename = paste0("Analysis/LifeExp_GDP_Cont_",Sys.Date(),".png"))
 ggplot(data = gapminder, mapping = aes(x=year, y=lifeExp, fill=continent,color=continent, alpha=.5)) +
   geom_point() +
   geom_smooth(method='lm', formula=y~x)
+
+ggsave(filename = paste0("Analysis/LifeExp_Year_Cont_",Sys.Date(),".png"))
