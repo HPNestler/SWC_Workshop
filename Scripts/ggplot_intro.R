@@ -18,3 +18,5 @@ ggplot(data = gapminder, mapping = aes(x=continent, y=lifeExp, fill=continent)) 
   theme_bw() # overall look of graph
 #+
 #  geom_point() # add for additional layers
+
+ggsave(filename = "Analysis/LifeExpCont.png")
